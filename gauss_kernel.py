@@ -1,6 +1,7 @@
 import numpy as np
 from scipy.stats import norm
 from scipy.signal import convolve2d
+from minimax import minmax
 
 def gauss_kernel(inp_for_sys, cnt_MF):
     x = np.arange(-360, 360.1, 0.1)  # Equivalent to -360:0.1:360 in Matlab
