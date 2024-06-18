@@ -9,7 +9,7 @@ def createneuron(inp_for_sys, cnt_MF):
         sd_cnt = cnt_MF / 2
         sd_cnt = 3 / sd_cnt
         
-    for i in range(1, cnt_MF):
+    for i in np.range(sd_cnt,3.1, sd_cnt):
         minsigma = inp_for_sys - (i * sd_cnt)
         plussigma = inp_for_sys + (i * sd_cnt)
         datapoints.extend([minsigma, plussigma])
