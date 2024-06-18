@@ -23,9 +23,9 @@ def gauss_kernel(inp_for_sys, cnt_MF):
 
             # watch krishna nayak's video . they are really good 
 
-            datapoints = np.zeros(cnt_MF)
-            for j in range(cnt_MF):
-                datapoints[j] = createneuron(inp_for_sys_norm[loop_j, i], cnt_MF)
+            datapoints = np.zeros((4,cnt_MF))
+            for j in range(inp_for_sys.shape[1]):
+                datapoints[j,:] = createneuron(inp_for_sys_norm[loop_j, i], cnt_MF)
 
             wt = (inp_for_sys_norm[loop_j, i] / 3) * len(datapoints)
 
