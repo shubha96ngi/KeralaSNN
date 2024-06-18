@@ -21,6 +21,8 @@ def gauss_kernel(inp_for_sys, cnt_MF):
             #https://stackoverflow.com/questions/41613155/what-does-scipy-signal-convolve2d-calculate 
             norm1 = (norm1 - np.min(norm1)) / (np.max(norm1) - np.min(norm1))
 
+            # watch krishna nayak's video . they are really good 
+
             datapoints = np.zeros(cnt_MF)
             for j in range(cnt_MF):
                 datapoints[j] = createneuron(inp_for_sys_norm[loop_j, i], cnt_MF)
