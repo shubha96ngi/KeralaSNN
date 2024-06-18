@@ -15,8 +15,10 @@ def gauss_kernel(inp_for_sys, cnt_MF):
         mf_spike = [[] for _ in range(inp_for_sys_norm.shape[1])]
 
         for i in range(inp_for_sys_norm.shape[1]):
-            norm = norm.pdf(x, loc=inp_for_sys_norm[loop_j, i], scale=10)
-            norm1 = convolve2d(norm.reshape(1, -1), inp_for_sys_norm[loop_j, i].reshape(1, 1), mode='same')
+            nor = norm.pdf(x, loc=inp_for_sys_norm[loop_j, i], scale=10)
+            norm1 = convolve2d(nor.reshape(1, -1), inp_for_sys_norm[loop_j, i].reshape(1, 1), mode='same')
+            # this convolved 2d mirror and reflect kerenl before multiplication 
+            #https://stackoverflow.com/questions/41613155/what-does-scipy-signal-convolve2d-calculate 
             norm1 = (norm1 - np.min(norm1)) / (np.max(norm1) - np.min(norm1))
 
             datapoints = np.zeros(cnt_MF)
