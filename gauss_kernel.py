@@ -29,8 +29,8 @@ def gauss_kernel(inp_for_sys, cnt_MF):
 
             wt = (inp_for_sys_norm[loop_j, i] / 3) * len(datapoints)
 
-            l_dp = np.isclose(np.round(x, 1), np.round(datapoints, 1).reshape(1, -1))
-            find_dp = np.where(l_dp)[1]
+            l_dp = np.isin(np.round(x, 1), np.round(datapoints, 1).reshape(1, -1))
+            find_dp = np.where(l_dp)[0]
             stor_sum = wt * norm1[0, find_dp]
 
             stor_sum_val.append(stor_sum)
